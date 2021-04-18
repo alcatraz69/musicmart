@@ -1,0 +1,40 @@
+.carousel {
+  position: fixed;
+  top: 128px;
+  margin-bottom: 200px;
+}
+
+.btn {
+  z-index: 1;
+  position: relative;
+  left: 45%;
+  top: 55%;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  background: transparent;
+  /* box-shadow: 3px 3px 3px -2px; */
+  border: 2px solid black;
+  margin-bottom: 60px;
+}
+.btn:hover {
+  background-color: #d4d5ff;
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 950px) {
+  .carousel {
+    position: fixed;
+    top: 40px;
+  }
+
+  .btn {
+    left: 32%;
+    top: 58%;
+  }
+
+  .w-100 {
+    width: 255%;
+  }
+}

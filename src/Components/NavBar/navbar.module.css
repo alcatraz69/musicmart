@@ -1,0 +1,112 @@
+.listitem {
+  display: block;
+  padding: 0.8em;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  /* background-color: rgb(230, 230, 230); */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.famusic {
+  color: rgb(206, 132, 255);
+  margin-right: 3px;
+}
+
+.listitem:hover {
+  background-color: #d4d5ff;
+  transition: all 0.5s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  float: left;
+  width: 40%;
+  height: 100%;
+  padding-left: 5%;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 80px;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+}
+
+.list {
+  float: right;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.menuicon {
+  color: rgb(0, 0, 0);
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+  .nav {
+    position: relative;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    top: 100px;
+    left: -120%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+  .listActive {
+    position: absolute;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    top: 80px;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    /* overflow-x: hidden; */
+    transition: all 0.5s ease-in;
+    z-index: 2;
+  }
+
+  .listitem {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    /* display: table; */
+    transition: all 0.5s ease-in;
+    border-radius: 0;
+  }
+
+  .listitem:hover {
+    background-color: #d4d5ff;
+  }
+
+  .menuicon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 85%);
+    font-size: 1.3rem;
+  }
+}
