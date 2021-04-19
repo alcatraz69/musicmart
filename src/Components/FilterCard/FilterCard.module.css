@@ -1,12 +1,8 @@
 .FilterCard {
   position: fixed;
   left: 0;
-  top: 100px;
+  top: 142px;
   width: 25%;
   background-color: rgb(207 223 255);
   padding: 20px;
-}
-
-.radioBtn {
-  padding-right: 3px;
 }

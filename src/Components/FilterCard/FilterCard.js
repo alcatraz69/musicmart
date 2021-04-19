@@ -22,6 +22,8 @@ export default function FilterCard(){
             />
             hight to low
           </label>
+
+          <hr></hr>
           
         
           <legend>Preferences</legend>
@@ -38,6 +40,20 @@ export default function FilterCard(){
             //   onClick={() => dispatch({ type: "WITHFASTDELIVERY" })}
             />
             fast delivery only
+          </label>
+
+          <hr></hr>
+          <legend>Price</legend>
+          <label>
+            slide 
+            <input
+              type="range"
+              min={0}
+              max={1000}
+            //   onChange={(event) =>
+            //     dispatch({ type: "SETPRICERANGE", payload: event.target.value })
+            //   }
+            />
           </label>
 
 
