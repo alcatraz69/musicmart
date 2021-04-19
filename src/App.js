@@ -11,8 +11,9 @@ function App() {
       
       <Switch>
         
+        
+        <Route path="/products" component={Products } />
         <Route path="/" component={MainPage } />
-        <Route path="products" component={Products } />
     
       </Switch>
     </div>

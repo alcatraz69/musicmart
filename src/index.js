@@ -5,12 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter  } from "react-router-dom";
+import {ProductsContextProvider} from "./store/ProductContext"
+import miragejs from './api/mock.server'
 
+miragejs()
 ReactDOM.render(
   <React.StrictMode>
+    <ProductsContextProvider>
     <BrowserRouter>
     <App />
     </BrowserRouter>
+    </ProductsContextProvider>
     
   </React.StrictMode>,
   document.getElementById('root')
