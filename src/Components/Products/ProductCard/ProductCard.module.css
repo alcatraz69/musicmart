@@ -4,7 +4,7 @@
 }
 
 .App {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* .container {
@@ -20,7 +20,7 @@
 .cards .cardimage {
   /* background-image: url("https://source.unsplash.com/featured/?hiking"); */
   height: 200px;
-  width: 245px;
+  /* width: 245px; */
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -74,10 +74,11 @@
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
-  line-height: 1.5em;
+  line-height: 0.5em;
+  align-items: center;
 }
 .cardtitle {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.1em;
   color: #32325d;
   margin: 0.8em 0;
@@ -86,9 +87,44 @@
 }
 
 .cardintro {
-  font-size: 25px;
-  padding: 10px;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-evenly;
+  padding: 8px;
   text-align: center;
-  line-height: 32px;
-  font-family: sans-serif;
+  line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.actionBtns {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-outline {
+  outline: none;
+  width: 90%;
+  margin: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.button-solid {
+  color: black;
+  width: 90%;
+  outline: none;
+  margin: 0.25rem;
+  border: 0px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.badge {
+  position: relative;
+  top: 5px;
+  left: 4px;
+  z-index: 1;
 }

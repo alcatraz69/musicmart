@@ -2,172 +2,172 @@ export const initialData=[
     {
       name:"Acoustic Guitar 34 Inch Teakwood",
       image:"https://images-na.ssl-images-amazon.com/images/I/71TAt6rlMQL._SX522_.jpg",
-      price:20000,
-      catagory:"Acoustic"
+      price:4000,
+      category:"Acoustic"
     },{
-      name:"Canon EOS 1500D",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616863432/Pixmart/Product%20Images/DSLR/Canon_EOS_1500D_qzgj3i.jpg",
-      price:31000,
-      catagory:"DSLR"
+      name:"Yamaha EOS 1500D",
+      image:"https://picsum.photos/id/71/350/200",
+      price:3000,
+      category:"Acoustic"
     },{
-      name:"Canon EOS 80D",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616863493/Pixmart/Product%20Images/DSLR/Canon_EOS_80D_hiyq5r.jpg",
-      price:95000,
-      catagory:"DSLR"
+      name:"Yamaha EOS 80D",
+      image:"https://picsum.photos/id/63/350/200",
+      price:9000,
+      category:"Acoustic"
     },{
-      name:"Canon EOS 1Dx Mark III",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616863666/Pixmart/Product%20Images/DSLR/Canon_EOS_1D_pcpz0p.jpg",
-      price:559990,
-      catagory:"DSLR"
+      name:"Yamaha EOS 1Dx Mark III",
+      image:"https://picsum.photos/id/19/350/200",
+      price:5590,
+      category:"Acoustic"
     },{
-      name:"Canon EOS 6d",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616863798/Pixmart/Product%20Images/DSLR/Canon_EOS_6D_xkpche.jpg",
-      price:187000,
-      catagory:"DSLR"
+      name:"Yamaha EOS 6d",
+      image:"https://picsum.photos/id/59/350/200",
+      price:5590,
+      category:"Acoustic"
     },{
-      name:"Nikon D5600",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616863949/Pixmart/Product%20Images/DSLR/Nikon_D5600_tgvutt.jpg",
-      price:51649,
-      catagory:"DSLR"
+      name:"Kadence D5600",
+      image:"https://picsum.photos/id/40/350/200",
+      price:5149,
+      category:"Acoustic"
     },{
-      name:"Nikon D7500",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864034/Pixmart/Product%20Images/DSLR/Nikon_D7500_ue3usl.jpg",
-      price:85000,
-      catagory:"DSLR"
+      name:"Kadence D7500",
+      image:"https://picsum.photos/id/11/350/200",
+      price:8500,
+      category:"Acoustic"
     },{
-      name:"Nikon D850",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864093/Pixmart/Product%20Images/DSLR/Nikon_D850_cwyki7.jpg",
-      price:211849,
-      catagory:"DSLR"
+      name:"Kadence D850",
+      image:"https://picsum.photos/id/88/350/200",
+      price:4849,
+      category:"Acoustic"
     },{
-      name:"Nikon D5300",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864250/Pixmart/Product%20Images/DSLR/Nikon_D5300_n82spz.jpg",
-      price:36999,
-      catagory:"DSLR"
+      name:"Kadence D5300",
+      image:"https://picsum.photos/id/77/350/200",
+      price:6999,
+      category:"Acoustic"
     },{
-      name:"Canon EOS 77D",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864325/Pixmart/Product%20Images/DSLR/Canon_EOS_77D_gb5bes.jpg",
-      price:80000,
-      catagory:"DSLR"
+      name:"Yamaha EOS 77D",
+      image:"https://picsum.photos/id/133/350/200",
+      price:6000,
+      category:"Acoustic"
     },{
       name:"Panasonic G7 Lumix",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864609/Pixmart/Product%20Images/Mirrorless/Panasonic_G7_Lumix_oewcis.jpg",
-      price:38490,
-      catagory:"MIRRORLESS"
+      image:"https://picsum.photos/id/157/350/200",
+      price:8490,
+      category:"Electric"
     },{
-      name:"Canon EOS M50",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864823/Pixmart/Product%20Images/Mirrorless/Canon_EOS_M50_ppswht.jpg",
-      price:52000,
-      catagory:"MIRRORLESS"
+      name:"Yamaha EOS M50",
+      image:"https://picsum.photos/id/124/350/200",
+      price:2000,
+      category:"Electric"
     },{
       name:"Fujiflim X-T2000",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864882/Pixmart/Product%20Images/Mirrorless/Fujiflim_X-T2000_jdzjrn.jpg",
-      price:51990,
-      catagory:"MIRRORLESS"
+      image:"https://picsum.photos/id/135/350/200",
+      price:5990,
+      category:"Electric"
     },{
       name:"Sony Alpha ILCE 6000L",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616864958/Pixmart/Product%20Images/Mirrorless/Sony_Alpha_ILCE_6000L_cr0iis.jpg",
-      price:47990,
-      catagory:"MIRRORLESS"
+      image:"https://picsum.photos/id/146/350/200",
+      price:7990,
+      category:"Electric"
     },{
-      name:"Canon EOS R",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865029/Pixmart/Product%20Images/Mirrorless/Canon_EOS_R_g5a9yf.jpg",
-      price:142135,
-      catagory:"MIRRORLESS"
+      name:"Yamaha EOS R",
+      image:"https://picsum.photos/id/136/350/200",
+      price:14135,
+      category:"Electric"
     },{
-      name:"Canon EOS R6",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865088/Pixmart/Product%20Images/Mirrorless/Canon_EOS_R6_h1bk1j.jpg",
-      price:214990,
-      catagory:"MIRRORLESS"
+      name:"Yamaha EOS R6",
+      image:"https://picsum.photos/id/111/350/200",
+      price:4990,
+      category:"Electric"
     },{
-      name:"Canon EOS M6 Mark II",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865168/Pixmart/Product%20Images/Mirrorless/Canon_EOS_M6_Mark_II_j2boid.jpg",
-      price:83949,
-      catagory:"MIRRORLESS"
+      name:"Yamaha EOS M6 Mark II",
+      image:"https://picsum.photos/id/99/350/200",
+      price:3949,
+      category:"Electric"
     },{
-      name:"Sigma FP mirrorless",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865404/Pixmart/Product%20Images/Mirrorless/Sigma_mirrorless_necysj.jpg",
-      price:138990,
-      catagory:"MIRRORLESS"
+      name:"Sigma FP Electric",
+      image:"https://picsum.photos/id/133/350/200",
+      price:38990,
+      category:"Electric"
     },{
       name:"Olympus E-M10 Mark III",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865477/Pixmart/Product%20Images/Mirrorless/Olympus_E-M10_Mark_III_wip2s8.jpg",
-      price:53990,
-      catagory:"MIRRORLESS"
+      image:"https://picsum.photos/id/159/350/200",
+      price:8990,
+      category:"Electric"
     },{
       name:"Sony DSC W830",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865735/Pixmart/Product%20Images/Point%20and%20shoot/Sony_DSC_W830_yxqqie.jpg",
+      image:"https://picsum.photos/id/171/350/200",
       price:8606,
-      catagory:"POINTANDSHOOT"
+      category:"Semi-Acoustic"
     },{
-      name:"Canon Powershot SX540-HS",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865823/Pixmart/Product%20Images/Point%20and%20shoot/Canon_Powershot_SX540-HS_j518se.jpg",
-      price:22086,
-      catagory:"POINTANDSHOOT"
+      name:"Yamaha Powershot SX540-HS",
+      image:"https://picsum.photos/id/119/350/200",
+      price:12086,
+      category:"Semi-Acoustic"
     },{
-      name:"Panasonic Luminix DZ FX100002",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616865896/Pixmart/Product%20Images/Point%20and%20shoot/Panasonic_Luminix_DZ_FX100002_uo4jec.jpg",
-      price:55454,
-      catagory:"POINTANDSHOOT"
+      name:"Fender Luminix DZ FX100002",
+      image:"https://picsum.photos/id/192/350/200",
+      price:25454,
+      category:"Semi-Acoustic"
     },{
-      name:"Canon Powershot SX430",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867207/Pixmart/Product%20Images/Point%20and%20shoot/Canon_Powershot_SX430_cwqs4j.jpg",
+      name:"Yamaha Powershot SX430",
+      image:"https://picsum.photos/id/176/350/200",
       price:16999,
-      catagory:"POINTANDSHOOT"
+      category:"Semi-Acoustic"
     },{
-      name:"Canon IXUS 185",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867274/Pixmart/Product%20Images/Point%20and%20shoot/Canon_IXUS_185_ydvj5h.jpg",
+      name:"Yamaha IXUS 185",
+      image:"https://picsum.photos/id/87/350/200",
       price:9395,
-      catagory:"POINTANDSHOOT"
+      category:"Semi-Acoustic"
     },{
-      name:"Canon Poweshot SX740",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867358/Pixmart/Product%20Images/Point%20and%20shoot/Canon_Powershot_SX740_y2om5q.jpg",
+      name:"Yamaha Poweshot SX740",
+      image:"https://picsum.photos/id/54/350/200",
       price:22000,
-      catagory:"POINTANDSHOOT"
+      category:"Semi-Acoustic"
     },{
-      name:"Nikon Coolpix B600",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867412/Pixmart/Product%20Images/Point%20and%20shoot/Nikon_Coolpix_B600_f22bu7.jpg",
+      name:"Kadence Coolpix B600",
+      image:"https://picsum.photos/id/69/350/200",
       price:25750,
-      catagory:"POINTANDSHOOT"
+      category:"Semi-Acoustic"
     },{
       name:"Sony SNY_830PS",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867478/Pixmart/Product%20Images/Point%20and%20shoot/Sony_SNY_830PS_ddae5q.jpg",
+      image:"https://picsum.photos/id/43/350/200",
       price:6490,
-      catagory:"POINTANDSHOOT"
+      category:"Semi-Acoustic"
     },{
       name:"Carbon Fibre Tripod",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867732/Pixmart/Product%20Images/ACCESSORIES/Carbon_Fibre_Tripod_xyxtpa.jpg",
+      image:"https://picsum.photos/id/143/350/200",
       price:8000,
-      catagory:"ACCESSORIES"
+      category:"Juarez"
     },{
       name:"Digitek monopod",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867827/Pixmart/Product%20Images/ACCESSORIES/Digitek_monopod_fdfhap.jpg",
-      price:38000,
-      catagory:"ACCESSORIES"
+      image:"https://picsum.photos/id/123/350/200",
+      price:3900,
+      category:"Juarez"
     },{
-      name:"Canon 28-75mm Macro lens",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867907/Pixmart/Product%20Images/ACCESSORIES/Canon_28-75mm_Macro_neqj4f.jpg",
-      price:35000,
-      catagory:"ACCESSORIES"
+      name:"Yamaha 28-75mm Macro lens",
+      image:"https://picsum.photos/id/166/350/200",
+      price:3500,
+      category:"Juarez"
     },{
-      name:"Canon EF50MM prime lens",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616867978/Pixmart/Product%20Images/ACCESSORIES/Canon_EF50MM_prime_lens_qdh4a7.jpg",
+      name:"Yamaha EF50MM prime lens",
+      image:"https://picsum.photos/id/116/350/200",
       price:9000,
-      catagory:"ACCESSORIES"
+      category:"Juarez"
     },{
-      name:"Canon EF 28-300MM",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616868223/Pixmart/Product%20Images/ACCESSORIES/Canon_EF_28-300MM_elyess.jpg",
-      price:173000,
-      catagory:"ACCESSORIES"
+      name:"Yamaha EF 28-300MM",
+      image:"https://picsum.photos/id/216/350/200",
+      price:17300,
+      category:"Juarez"
     },{
-      name:"Nikon ED 18-200mm",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616868300/Pixmart/Product%20Images/ACCESSORIES/Nikon_ED_18-200mm_pxihht.jpg",
-      price:33000,
-      catagory:"ACCESSORIES"
+      name:"Kadence ED 18-200mm",
+      image:"https://picsum.photos/id/426/350/200",
+      price:3300,
+      category:"Juarez"
     },{
       name:"Sigma 100-400mm",
-      image:"https://res.cloudinary.com/docpuxue8/image/upload/v1616868414/Pixmart/Product%20Images/ACCESSORIES/Sigma_100-400mm_wfyqpi.jpg",
-      price:80490,
-      catagory:"ACCESSORIES"
+      image:"https://picsum.photos/id/126/350/200",
+      price:8490,
+      category:"Juarez"
     }
   ]

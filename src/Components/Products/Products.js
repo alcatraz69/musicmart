@@ -7,13 +7,13 @@ import FilterCard from '../FilterCard/FilterCard'
 
 export default function Products() {
   const {products}=useContext(ProductContext);
-  console.log(products);
+  
   return(
     <>
     <FilterCard/>
     <div className={styles.products}>
                     {
-                        products&&products.map(({id,name,image,price,rating,hasDiscount,discount
+                        products&&products.map(({id,name,image,price,category,rating,hasDiscount,discount
                             ,fastDelivery,inStock,inCart,inWishlist})=>(
                             
                                 <ProductCard
@@ -21,6 +21,7 @@ export default function Products() {
                                     name={name}
                                     image={image}
                                     price= {price}
+                                    category={category}
                                     rating={rating}
                                     hasDiscount={hasDiscount}
                                     discount={discount}
