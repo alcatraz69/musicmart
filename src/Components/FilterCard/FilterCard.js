@@ -1,5 +1,8 @@
+import {useContext} from 'react'
+import {ProductContext} from '../../store/ProductContext'
 import styles from './FilterCard.module.css'
 export default function FilterCard(){
+  const {dispatch} = useContext(ProductContext)
     return(
         <div className={styles.FilterCard} style={{ display: "flex", flexWrap: "wrap" ,flexDirection: "column"}}>
             
@@ -9,7 +12,7 @@ export default function FilterCard(){
             className={styles.radioBtn}
               type="radio"
               name="price"
-            //   onClick={() => dispatch({ type: "SORTLOWTOHIGH" })}
+              onClick={() => dispatch({ type: "SORTLOWTOHIGH" })}
             />
             low to high
           </label>
@@ -18,7 +21,7 @@ export default function FilterCard(){
             className={styles.radioBtn}
               type="radio"
               name="price"
-            //   onClick={() => dispatch({ type: "SORTHIGHTOLOW" })}
+              onClick={() => dispatch({ type: "SORTHIGHTOLOW" })}
             />
             hight to low
           </label>
@@ -30,14 +33,14 @@ export default function FilterCard(){
           <label>
             <input
               type="checkbox"
-            //   onClick={() => dispatch({ type: "OUTOFSTOCK" })}
+              onClick={() => dispatch({ type: "OUTOFSTOCK" })}
             />
             inclue out of stock products
           </label>
           <label>
             <input
               type="checkbox"
-            //   onClick={() => dispatch({ type: "WITHFASTDELIVERY" })}
+              onClick={() => dispatch({ type: "WITHFASTDELIVERY" })}
             />
             fast delivery only
           </label>
@@ -49,12 +52,14 @@ export default function FilterCard(){
             <input
               type="range"
               min={0}
+              
               max={1000}
-            //   onChange={(event) =>
-            //     dispatch({ type: "SETPRICERANGE", payload: event.target.value })
-            //   }
+              // onChange={(event) =>
+              //   dispatch({ type: "SETPRICERANGE", payload: event.target.value })
+              // }
             />
           </label>
+         
 
 
 
