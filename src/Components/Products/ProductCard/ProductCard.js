@@ -27,7 +27,8 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
                      {rating}
                   </div>
                 </div>
-                
+                {inWishlist? <span className={styles.wishlistIcon}><i className="fas fa-heart"></i></span> :
+                 <span className={styles.wishlistIcon}><i className="far fa-heart"></i></span>}
 
                 
               </div>
@@ -54,7 +55,7 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
                         </div>
                         }
 
-                        {inWishlist?<i class="fas fa-heart"></i>:<i class="far fa-heart"></i>}
+                       
 
 
               

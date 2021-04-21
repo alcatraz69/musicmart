@@ -70,10 +70,11 @@
 }
 
 .cardinfo {
+  position: relative;
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   line-height: 0.5em;
   align-items: center;
 }
@@ -107,7 +108,7 @@
 .button-outline {
   outline: none;
   width: 90%;
-  margin: 0.25rem;
+  margin: 1rem;
   padding: 0.5rem;
   font-size: 1rem;
 }
@@ -116,7 +117,7 @@
   color: black;
   width: 90%;
   outline: none;
-  margin: 0.25rem;
+  margin: 1rem;
   border: 0px;
   padding: 0.5rem;
   font-size: 1rem;
@@ -127,4 +128,11 @@
   top: 5px;
   left: 4px;
   z-index: 1;
+}
+
+.wishlistIcon {
+  position: absolute;
+  top: 9px;
+  right: 17px;
+  font-size: 18px;
 }
