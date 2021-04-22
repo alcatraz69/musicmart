@@ -12,7 +12,7 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
               <img className={styles.cardimage} src={image} alt=""/>
               </div>
               {fastDelivery && (
-          <span className={styles.badge}>Express</span>
+          <span className={styles.badge}><i className="fas fa-paper-plane"></i></span>
         )}
               <div className={styles.cardinfo}>
                 <h2 className={styles.cardtitle}> {name}</h2>

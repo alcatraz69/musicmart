@@ -19,7 +19,9 @@
   margin-bottom: 60px;
 }
 .btn:hover {
-  background-color: #d4d5ff;
+  background-color: #007bff;
+  color: white;
+  border: 2px solid #007bff;
   transition: all 0.5s ease;
 }
 
