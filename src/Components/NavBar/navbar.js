@@ -22,8 +22,8 @@ export default function Navbar(){
             <ul className={clicked?styles.listActive:styles.list}>
                 <li className={styles.listitem}><NavLink to="/">Home</NavLink></li>
                 <li className={styles.listitem}><NavLink to="/products">Products</NavLink></li>
-                <li className={styles.listitem}><NavLink to="wishlist">Wishlist</NavLink></li>
-                <li className={styles.listitem}>Cart</li>
+                <li className={styles.listitem}><NavLink to="/wishlist">Wishlist</NavLink></li>
+                <li className={styles.listitem}><NavLink to="/cart">Cart</NavLink></li>
             </ul>
            
         </div>
