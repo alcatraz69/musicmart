@@ -1,0 +1,22 @@
+.section {
+  position: fixed;
+  width: 20%;
+  right: 80px;
+  background-color: darkgray;
+  top: 140px;
+  padding: 40px;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  font-family: "Montserrat";
+}
+
+.priceDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderBtn {
+  border: 2px solid black;
+  padding: 6px 20px;
+  text-decoration: none;
+  width: 99%;
+}

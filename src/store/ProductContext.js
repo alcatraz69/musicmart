@@ -48,6 +48,18 @@ export const ProductsContextProvider=({children})=>{
                           priceRange: action.payload
                           
                         };
+            case "ADD_TO_WISHLIST":
+                    return{
+                        ...state,
+                        wishListItems:[...state.wishListItems,...state.products.filter(product=>product.id===action.payload).map(item=>({...item,inWishlist:true}))],
+                        products:state.products.map(product=>product.id===action.payload?{...product,inWishlist:true}:product)
+                      };
+            case "REMOVE_FROM_WISHLIST":
+                    return{
+                        ...state,
+                        wishListItems:state.wishListItems.filter(product=>product.id!==action.payload),
+                        products:state.products.map(product=>product.id===action.payload?{...product,inWishlist:false}:product)
+                     }
             default:
                     return state;
         }
@@ -90,7 +102,7 @@ export const ProductsContextProvider=({children})=>{
 
    
 
-      console.log(state.priceRange)
+    //   console.log(state.priceRange)
 
     //   const priceRangeData = getProductsUnderPrice(state.items, state.priceRange);
 
@@ -106,10 +118,6 @@ export const ProductsContextProvider=({children})=>{
 //   const getMax = () => getSortedData(state.items, "SORTHIGHTOLOW")[0].price;
 
  
-
-  
-
-   
 
     return(
         <ProductContext.Provider 

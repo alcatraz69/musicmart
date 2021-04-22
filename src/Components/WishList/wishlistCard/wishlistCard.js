@@ -1,6 +1,10 @@
-import styles from './ProductCard.module.css'
+import styles from './wishlistCard.module.css'
+import {ProductContext} from '../../../store/ProductContext'
+import {useContext} from 'react'
 
-export default function ProductCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}) {
+export default function WishlistCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}) {
+
+    const {dispatch}=useContext(ProductContext);
     return (
       <div className={styles.App}>
       
@@ -8,7 +12,7 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
           
           <div className={styles.carditem}>
           
-              <div className={styles.cardimageSec}>
+              <div className={styles.cardimage}>
               <img className={styles.cardimage} src={image} alt=""/>
               </div>
               {fastDelivery && (
@@ -27,8 +31,21 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
                      {rating}
                   </div>
                 </div>
-                {inWishlist? <span className={styles.wishlistIcon}><i className="fas fa-heart"></i></span> :
-                 <span className={styles.wishlistIcon}><i className="far fa-heart"></i></span>}
+                
+                 <i className={inWishlist?"far fa-heart":"fas fa-heart"} 
+                 onClick={() => { inWishlist?
+                  dispatch({
+                      type: "REMOVE_FROM_WISHLIST",
+                      payload: id,
+                    })
+                  :
+                dispatch({
+                  type: "ADD_TO_WISHLIST",
+                  payload: id,
+                });
+            }}>
+
+            </i>
 
                 
               </div>
@@ -55,32 +72,12 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
                         </div>
                         }
 
-                       
-
-
-              
+   
               </div>
-              {/* <button>{inStock?"Add To Cart":"Out of Stock"}</button>
-              <button>Add to Wishlist</button> */}
+            
             </div>
           </div>    
       </div>
     )
 }
   
-
-// {inWishlist?<button 
-//   className={`${styles["button-solid"]} ${styles["button-solid-secondary"]}`}
-// >
-//   {/* <Link to="/wishlist">
-//       Go to Wishlist
-//   </Link> */}
-// </button>:<button 
-//   className={`${styles["button-outline"]} ${styles["button-secondary"]}`}
-//   // onClick={()=>{
-//   //     dispatch({type:"ADD_TO_WISHLIST",payload:id})
-//   //     infoToast(`${name} Added to wishlist`)
-//   // }}
-// >
-// Add to wishlist
-// </button>}
