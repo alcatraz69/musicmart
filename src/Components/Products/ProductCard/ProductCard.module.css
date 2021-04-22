@@ -52,6 +52,7 @@
 }
 
 .cards .carditem {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -124,10 +125,15 @@
 }
 
 .badge {
-  position: relative;
+  position: absolute;
   top: 5px;
   left: 4px;
   z-index: 1;
+  /* background: rgb(94, 178, 235); */
+  /* font-family: "Montserrat"; */
+  /* font-size: smaller; */
+  padding: 1px 4px;
+  color: rgb(51, 116, 255);
 }
 
 .wishlistIcon {
