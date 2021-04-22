@@ -13,7 +13,7 @@ export default function CartPage() {
            </div>
            <div className={styles.cardContent}>
              <div className={styles.carInfo}>
-               <h5>Rs. 5999</h5>
+               <h5>Rs. 5,999</h5>
                <p>Yamaha Acoustic guitar</p>
              </div>
              <div className={styles.cardBtns}>
@@ -29,7 +29,7 @@ export default function CartPage() {
            </div>
            <div className={styles.cardContent}>
              <div className={styles.carInfo}>
-               <h5>Rs. 5999</h5>
+               <h5>Rs. 4,999</h5>
                <p>Yamaha Acoustic guitar</p>
              </div>
              <div className={styles.cardBtns}>
@@ -45,7 +45,7 @@ export default function CartPage() {
            </div>
            <div className={styles.cardContent}>
              <div className={styles.carInfo}>
-               <h5>Rs. 5999</h5>
+               <h5>Rs. 5,999</h5>
                <p>Yamaha Acoustic guitar</p>
              </div>
              <div className={styles.cardBtns}>
@@ -61,7 +61,7 @@ export default function CartPage() {
            </div>
            <div className={styles.cardContent}>
              <div className={styles.carInfo}>
-               <h5>Rs. 5999</h5>
+               <h5>Rs. 5,999</h5>
                <p>Yamaha Acoustic guitar</p>
              </div>
              <div className={styles.cardBtns}>
@@ -77,7 +77,7 @@ export default function CartPage() {
            </div>
            <div className={styles.cardContent}>
              <div className={styles.carInfo}>
-               <h5>Rs. 5999</h5>
+               <h5>Rs. 5,999</h5>
                <p>Yamaha Acoustic guitar</p>
              </div>
              <div className={styles.cardBtns}>
