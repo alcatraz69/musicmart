@@ -59,7 +59,17 @@ export const ProductsContextProvider=({children})=>{
                         ...state,
                         wishListItems:state.wishListItems.filter(product=>product.id!==action.payload),
                         products:state.products.map(product=>product.id===action.payload?{...product,inWishlist:false}:product)
-                     }
+                     };
+            case "INCREMENT_QUANTITY":
+                      return{
+                          ...state,
+                          cartItems:state.cartItems.map(product=>product.id===action.payload?{...product,quantity:product.quantity+1}:product)
+                      };
+            case "DECREMENT_QUANTITY":
+                      return{
+                          ...state,
+                          cartItems:state.cartItems.map(product=>product.id===action.payload?{...product,quantity:product.quantity>1?product.quantity-1:product.quantity}:product)
+                      };
             
             case "ADD_TO_CART":
       
@@ -68,7 +78,15 @@ export const ProductsContextProvider=({children})=>{
                         cartItems:[...state.cartItems,...state.products.filter(product=>product.id===action.payload).map(item=>({...item,inCart:true,quantity:1}))],
                         products:state.products.map(product=>product.id===action.payload?{...product,inCart:true}:product),
                         wishListItems:state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:true}:product)
-             }
+             };
+
+             case "REMOVE_FROM_CART":
+                return{
+                    ...state,
+                    cartItems:state.cartItems.filter(product=>product.id!==action.payload),
+                    products:state.products.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product),
+                    wishListItems:state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product)
+                };
 
 
             default:
@@ -126,7 +144,7 @@ export const ProductsContextProvider=({children})=>{
       );
 
 //       const getMin = () => getSortedData(state.items, "SORTLOWTOHIGH")[0].price;
-//   const getMax = () => getSortedData(state.items, "SORTHIGHTOLOW")[0].price;
+//       const getMax = () => getSortedData(state.items, "SORTHIGHTOLOW")[0].price;
 
  
 
@@ -142,7 +160,7 @@ export const ProductsContextProvider=({children})=>{
                 includeOutOfStock:state.includeOutOfStock,
                 sortby:state.sortby,
                 totalCost:state.totalCost,
-                filterByCatagory:state.filterByCatagory,
+                filterByCatagory:state.filterByCatagory
                 // getMin:getMin,
                 // getMax:getMax
             }}

@@ -1,5 +1,8 @@
 import styles from './cartCard.module.css'
-export default function CartCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}){
+import {useContext} from 'react'
+import {ProductContext} from '../../../store/ProductContext'
+export default function CartCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery,quantity}){
+    const {dispatch}=useContext(ProductContext);
     return(
         <div className={styles.card}>
            <div className={styles.cardHero}>
@@ -11,9 +14,25 @@ export default function CartCard({id,name,image,hasDiscount,price,category,disco
                <p>{name}</p>
 
              </div>
+
+             <div className={styles.quantity}>
+                 <button className={styles.quantityBtn} 
+                 onClick={()=>dispatch({type:"DECREMENT_QUANTITY",payload:id})}>-</button>
+                 <p className={styles.quantityTxt}>{quantity}</p>
+                 <button className={styles.quantityBtn} 
+                 onClick={()=>dispatch({type:"INCREMENT_QUANTITY",payload:id})}>+</button>
+             </div>
+             
              <div className={styles.cardBtns}>
-               <button href="#" className={styles.cardBtn1}>Delete</button>
-               <button href="#" className={styles.cardBtn1}>Move to wishlist</button>
+               <button  className={styles.cardBtn1} onClick={() => dispatch({
+                      type: "REMOVE_FROM_CART",
+                      payload: id,
+                    })}>
+                    Delete</button>
+               <button href="#" className={styles.cardBtn1} onClick={() => dispatch({
+                  type: "ADD_TO_WISHLIST",
+                  payload: id,
+                })}>Move to wishlist</button>
              </div>
            </div>
         </div>

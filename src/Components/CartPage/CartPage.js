@@ -11,9 +11,10 @@ export default function CartPage() {
     <>
     <div className={styles.section}>
 
-    {
-                        cartItems&&cartItems.map(({id,name,image,price,category,rating,hasDiscount,discount
-                            ,fastDelivery,inStock,inCart,inWishlist})=>(
+    {cartItems.length>0? <ul>{
+                        
+                        cartItems.map(({id,name,image,price,category,rating,hasDiscount,discount
+                            ,fastDelivery,inStock,inCart,inWishlist,quantity})=>(
                             
                                 <CartCard
                                     id={id}
@@ -28,10 +29,18 @@ export default function CartPage() {
                                     inStock={inStock}
                                     inCart={inCart}
                                     inWishlist={inWishlist}
+                                    quantity={quantity}
                                 />
                            
                         ))
-                    }
+                        
+                    }</ul>:
+                    <div style={{fontSize:"xxx-large",backgroundColor:"#70bdff", padding: "50px 165px",color: "#fff"}}>
+                      Your cart is empty! 🥺 
+                    </div>
+}
+  
+
 
 
     </div>
