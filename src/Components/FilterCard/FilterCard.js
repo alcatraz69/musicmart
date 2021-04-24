@@ -60,10 +60,6 @@ export default function FilterCard(){
             />
           </label>
          
-
-
-
-
         </div>
     )
 }

@@ -141,8 +141,13 @@
   top: 9px;
   right: 17px;
   font-size: 18px;
+  color: rgb(240, 72, 72);
 }
 
 .wishlistIcon:hover {
   background-color: #919191;
+}
+
+.star {
+  margin-right: 5px;
 }

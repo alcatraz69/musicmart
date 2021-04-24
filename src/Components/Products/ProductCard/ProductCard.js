@@ -1,6 +1,10 @@
 import styles from './ProductCard.module.css'
+import {useContext} from 'react'
+import {ProductContext} from '../../../store/ProductContext'
 
 export default function ProductCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}) {
+
+  const {dispatch}=useContext(ProductContext);
     return (
       <div className={styles.App}>
       
@@ -23,12 +27,29 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
                   </div>
                 
                   <div className={styles.rating}>
-                    <i className="fas fa-star"></i>
+                    <span className={styles.star}><i className="fas fa-star"></i></span>
                      {rating}
                   </div>
                 </div>
-                {inWishlist? <span className={styles.wishlistIcon}><i className="fas fa-heart"></i></span> :
-                 <span className={styles.wishlistIcon}><i className="far fa-heart"></i></span>}
+                <span className={styles.wishlistIcon}>
+                <i className={!inWishlist?"far fa-heart":"fas fa-heart"} 
+                 onClick={() => {inWishlist?
+                  
+                  dispatch({
+                      type: "REMOVE_FROM_WISHLIST",
+                      payload: id,
+                    })
+                  : 
+                dispatch({
+                  type: "ADD_TO_WISHLIST",
+                  payload: id,
+                });
+                console.log("onclick");
+            }}>
+
+            </i>
+                </span>
+                
 
                 
               </div>

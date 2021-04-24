@@ -20,10 +20,21 @@ export default function Navbar(){
             </div>
             
             <ul className={clicked?styles.listActive:styles.list}>
-                <li className={styles.listitem}><NavLink to="/">Home</NavLink></li>
-                <li className={styles.listitem}><NavLink to="/products">Products</NavLink></li>
-                <li className={styles.listitem}><NavLink to="/wishlist">Wishlist</NavLink></li>
-                <li className={styles.listitem}><NavLink to="/cart">Cart</NavLink></li>
+                <li className={styles.listitem}><NavLink to="/" exact style={{textDecoration:"none"}} activeStyle={{
+                                                 borderBottom:"2px solid black"
+                                                  }}>Home</NavLink></li>
+
+                <li className={styles.listitem}><NavLink to="/products" style={{textDecoration:"none"}} activeStyle={{
+                                                 borderBottom:"2px solid black"
+                                                  }}>Products</NavLink></li>
+
+                <li className={styles.listitem}><NavLink to="/cart" style={{textDecoration:"none"}} activeStyle={{
+                                                 borderBottom:"2px solid black"
+                                                  }}>Cart</NavLink></li>
+
+                <li className={styles.listitem}><NavLink to="/wishlist" style={{textDecoration:"none"}} activeStyle={{
+                                                 borderBottom:"2px solid black"
+                                                  }}>Wishlist</NavLink></li>
             </ul>
            
         </div>

@@ -12,10 +12,10 @@ function App() {
       <NavBar/>
       
       <Switch>
-        <Route path="/cart" component={Cart } />
-        <Route path="/wishlist" component={WishList } />
-        <Route path="/products" component={Products } />
-        <Route path="/" component={MainPage } />
+        <Route  path="/cart"  component={Cart } />
+        <Route  path="/wishlist"  component={WishList } />
+        <Route  path="/products"  component={Products } />
+        <Route  path="/"  component={MainPage } />
     
       </Switch>
     </div>

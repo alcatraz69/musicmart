@@ -1,21 +1,21 @@
 import React from "react";
 import {useContext} from 'react'
 import {ProductContext} from '../../store/ProductContext'
-import wishlistCard from './wishlistCard/wishlistCard'
 import styles from './WishList.module.css'
+import ProductCard from '../Products/ProductCard/ProductCard'
 
 export default function WishList() {
 
   const {wishListItems}=useContext(ProductContext)
   return (
-    <div className={styles.products}>
+    <div >
                     {wishListItems.length>0?
 
-                        <ul>{
+                        <ul className={styles.products}>{
                           wishListItems.map(({id,name,image,price,category,rating,hasDiscount,discount
                             ,fastDelivery,inStock,inCart,inWishlist})=>(
-                             <li key={id}>
-                                <wishlistCard
+                             
+                                <ProductCard
                                     id={id}
                                     name={name}
                                     image={image}
@@ -29,7 +29,7 @@ export default function WishList() {
                                     inCart={inCart}
                                     inWishlist={inWishlist}
                                 />
-                           </li>
+                           
                         ))
                     }</ul>
                     : <h1 style={{position:"absolute",top:"100px",textAlign:"center"}}>Wishlist empty</h1>
