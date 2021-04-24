@@ -1,6 +1,7 @@
 import styles from './ProductCard.module.css'
 import {useContext} from 'react'
 import {ProductContext} from '../../../store/ProductContext'
+import {NavLink} from 'react-router-dom'
 
 export default function ProductCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}) {
 
@@ -56,22 +57,22 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
               <div className={styles.actionBtns}>
               {inStock?inCart?
                         <button 
-                            className={`${styles["button-solid"]} ${styles["button-solid-secondary"]}`}
+                            className={`${styles["button-secondary"]} `}
                         >
-                            {/* <Link to="/cart">
+                            <NavLink to="/cart" style={{textDecoration:"none",color:"white"}}>
                                 Go to cart
-                            </Link> */}
+                            </NavLink>
                         </button>:
                         <button 
-                            className={`${styles["button-solid"]} ${styles["button-primary"]}`}
-                            // onClick={()=>{
-                            //     successToast(`${name} Added to cart`)
-                            //     dispatch({type:"ADD_TO_CART",payload:id})
-                            // }}
+                            className={`${styles["button-primary"]} `}
+                            onClick={()=>{
+                                
+                                dispatch({type:"ADD_TO_CART",payload:id})
+                            }}
                         >
                         Add to cart
                         </button>:
-                        <div className={`${styles["badge-solid"]} ${styles["badge-not-instock"]}`}>
+                        <div className={`${styles["button-solid"]} ${styles["badge-not-instock"]}`}>
                             Not in stock
                         </div>
                         }

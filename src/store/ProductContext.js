@@ -60,6 +60,17 @@ export const ProductsContextProvider=({children})=>{
                         wishListItems:state.wishListItems.filter(product=>product.id!==action.payload),
                         products:state.products.map(product=>product.id===action.payload?{...product,inWishlist:false}:product)
                      }
+            
+            case "ADD_TO_CART":
+      
+                   return{
+                      ...state,
+                        cartItems:[...state.cartItems,...state.products.filter(product=>product.id===action.payload).map(item=>({...item,inCart:true,quantity:1}))],
+                        products:state.products.map(product=>product.id===action.payload?{...product,inCart:true}:product),
+                        wishListItems:state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:true}:product)
+             }
+
+
             default:
                     return state;
         }

@@ -1,6 +1,6 @@
 export const initialData=[
     {
-      name:"Acoustic Guitar 34 Inch Teakwood",
+      name:"Acoustic Guitar 34 Inch",
       image:"https://images-na.ssl-images-amazon.com/images/I/71TAt6rlMQL._SX522_.jpg",
       price:"4,000",
       category:"Acoustic"

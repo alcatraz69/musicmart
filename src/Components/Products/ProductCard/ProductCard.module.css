@@ -106,15 +106,39 @@
   align-items: center;
 }
 
-.button-outline {
+/* .button-outline {
   outline: none;
   width: 90%;
   margin: 1rem;
   padding: 0.5rem;
   font-size: 1rem;
+} */
+
+.button-primary {
+  color: rgb(255, 255, 255);
+  width: 90%;
+  outline: none;
+  margin: 1rem;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgb(50, 133, 201);
+  border-radius: 4px;
 }
 
-.button-solid {
+.button-secondary {
+  color: rgb(255, 255, 255);
+  width: 90%;
+  outline: none;
+  margin: 1rem;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgb(10, 38, 61);
+  border-radius: 4px;
+}
+
+.badge-not-instock {
   color: black;
   width: 90%;
   outline: none;
@@ -122,6 +146,8 @@
   border: 0px;
   padding: 0.5rem;
   font-size: 1rem;
+  background-color: rgb(206, 206, 206);
+  text-align: center;
 }
 
 .badge {
@@ -144,9 +170,9 @@
   color: rgb(240, 72, 72);
 }
 
-.wishlistIcon:hover {
+/* .wishlistIcon:hover {
   background-color: #919191;
-}
+} */
 
 .star {
   margin-right: 5px;

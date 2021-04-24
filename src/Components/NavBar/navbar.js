@@ -5,7 +5,7 @@ import {useContext} from 'react'
 import {ProductContext} from '../../store/ProductContext'
 
 export default function Navbar(){
-    const {wishListItems}=useContext(ProductContext)
+    const {wishListItems,cartItems}=useContext(ProductContext)
 
     const [clicked,setClicked] = useState(false)
     function handleClick(){
@@ -33,7 +33,9 @@ export default function Navbar(){
 
                 <li className={styles.listitem}><NavLink to="/cart" style={{textDecoration:"none"}} activeStyle={{
                                                  borderBottom:"2px solid black"
-                                                  }}>Cart</NavLink></li>
+                                                  }}><span className={styles.title}>Cart
+                                                  <span className={styles.badge}>{cartItems.length}
+                                                      </span></span></NavLink></li>
 
                 <li className={styles.listitem}><NavLink to="/wishlist" style={{textDecoration:"none"}} activeStyle={{
                                                  borderBottom:"2px solid black"
