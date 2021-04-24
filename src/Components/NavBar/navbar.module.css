@@ -57,6 +57,24 @@
   display: none;
 }
 
+.title {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  background-color: rgb(243, 61, 61);
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  top: -12px;
+  right: -12px;
+  text-align: center;
+}
+
 @media screen and (max-width: 950px) {
   .nav {
     position: relative;

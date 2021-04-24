@@ -1,8 +1,11 @@
 import styles from './navbar.module.css'
 import { NavLink} from "react-router-dom";
 import {useState} from 'react'
+import {useContext} from 'react'
+import {ProductContext} from '../../store/ProductContext'
 
 export default function Navbar(){
+    const {wishListItems}=useContext(ProductContext)
 
     const [clicked,setClicked] = useState(false)
     function handleClick(){
@@ -34,7 +37,11 @@ export default function Navbar(){
 
                 <li className={styles.listitem}><NavLink to="/wishlist" style={{textDecoration:"none"}} activeStyle={{
                                                  borderBottom:"2px solid black"
-                                                  }}>Wishlist</NavLink></li>
+                                                  }}>
+                                                      <span className={styles.title}>Wishlist
+                                                      <span className={styles.badge}>{wishListItems.length}
+                                                          </span></span>
+                                                  </NavLink></li>
             </ul>
            
         </div>
