@@ -47,7 +47,7 @@ export default function Banner(){
   </Carousel.Item>
 </Carousel>
 
-  <NavLink to="/Products" className={styles.btn} style={{textDecoration:"none",width:"126px"}}>Shop Now</NavLink>
+  <NavLink to="/Products" className={styles.btn} style={{textDecoration:"none",width:"118px"}}>Shop Now</NavLink>
 </>
     )
 
