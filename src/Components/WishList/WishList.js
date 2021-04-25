@@ -36,7 +36,7 @@ export default function WishList() {
                            
                         ))
                     }</ul>
-                    : <h1 style={{position:"absolute",top:"100px",textAlign:"center"}}>Wishlist empty</h1>
+                    : <h1 style={{position:"relative",top:"140px",textAlign:"center"}}>Wishlist is empty</h1>
                   }
                
             
