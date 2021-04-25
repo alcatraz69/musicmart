@@ -1,5 +1,5 @@
 .carousel {
-  position: fixed;
+  position: relative;
   top: 128px;
   margin-bottom: 200px;
 }
