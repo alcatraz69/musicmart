@@ -1,6 +1,6 @@
 .products {
   position: relative;
-  top: 100px;
+  top: 110px;
   display: flex;
   -webkit-display: box;
   -moz-display: box;
@@ -11,4 +11,16 @@
   margin: 0;
   width: 100%;
   justify-content: center;
+}
+
+.wishlistHead {
+  border-bottom: 2px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 100px;
+  height: 40px;
+  padding: 0px;
+  margin: 0 45px;
+  font-size: x-large;
 }

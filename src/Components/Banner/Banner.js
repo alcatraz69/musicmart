@@ -3,6 +3,7 @@ import img1 from '../../Assets/images/1.png'
 import img2 from '../../Assets/images/4.png'
 import img3 from '../../Assets/images/3.png'
 import styles from './Banner.module.css'
+import {NavLink} from 'react-router-dom'
 
 export default function Banner(){
     return(
@@ -45,7 +46,8 @@ export default function Banner(){
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-<button className={styles.btn}>Shop Now</button>
+
+  <NavLink to="/Products" className={styles.btn} style={{textDecoration:"none",width:"126px"}}>Shop Now</NavLink>
 </>
     )
 

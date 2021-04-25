@@ -34,15 +34,15 @@ export default function Navbar(){
                 <li className={styles.listitem}><NavLink to="/cart" style={{textDecoration:"none"}} activeStyle={{
                                                  borderBottom:"2px solid black"
                                                   }}><span className={styles.title}>Cart
-                                                  <span className={styles.badge}>{cartItems.length}
-                                                      </span></span></NavLink></li>
+                                                  {cartItems.length>0?<span className={styles.badge}>{cartItems.length}</span>:null}
+                                                      </span></NavLink></li>
 
                 <li className={styles.listitem}><NavLink to="/wishlist" style={{textDecoration:"none"}} activeStyle={{
                                                  borderBottom:"2px solid black"
                                                   }}>
                                                       <span className={styles.title}>Wishlist
-                                                      <span className={styles.badge}>{wishListItems.length}
-                                                          </span></span>
+                                                      {wishListItems.length>0?  <span className={styles.badge}>{ wishListItems.length } </span> : null}
+                                                          </span>
                                                   </NavLink></li>
             </ul>
            
