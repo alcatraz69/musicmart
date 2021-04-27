@@ -11,7 +11,7 @@ export default function CartCard({id,name,image,hasDiscount,price,category,disco
            <div className={styles.cardContent}>
              <div className={styles.carInfo}>
                <h5>Rs. {price}</h5>
-               <p>{name}</p>
+               <p style={{width:"150px"}}>{name}</p>
 
              </div>
 

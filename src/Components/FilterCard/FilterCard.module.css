@@ -8,3 +8,15 @@
   padding: 20px;
   font-family: "Montserrat", sans-serif;
 }
+
+.radioBtn {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.15rem;
+  position: relative;
+  top: 0.15rem;
+}
+
+.slideBtn {
+  margin-left: 4px;
+}

@@ -14,6 +14,7 @@ export default function FilterCard(){
               name="price"
               onClick={() => dispatch({ type: "SORTLOWTOHIGH" })}
             />
+          
             low to high
           </label>
           <label>
@@ -23,6 +24,7 @@ export default function FilterCard(){
               name="price"
               onClick={() => dispatch({ type: "SORTHIGHTOLOW" })}
             />
+          
             hight to low
           </label>
 
@@ -32,6 +34,7 @@ export default function FilterCard(){
           <legend>Preferences</legend>
           <label>
             <input
+            className={styles.radioBtn}
               type="checkbox"
               onClick={() => dispatch({ type: "OUTOFSTOCK" })}
             />
@@ -39,6 +42,7 @@ export default function FilterCard(){
           </label>
           <label>
             <input
+            className={styles.radioBtn}
               type="checkbox"
               onClick={() => dispatch({ type: "WITHFASTDELIVERY" })}
             />
@@ -50,6 +54,7 @@ export default function FilterCard(){
           <label>
             slide 
             <input
+            className={styles.slideBtn}
               type="range"
               min={0}
               
