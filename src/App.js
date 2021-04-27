@@ -4,6 +4,7 @@ import MainPage from './Components/MainPage/MainPage'
 import Products from './Components/Products/Products'
 import WishList from './Components/WishList/WishList'
 import Cart from './Components/CartPage/CartPage'
+import Footer from './Components/Footer/Footer'
 import { Switch, Route} from "react-router-dom";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route  path="/"  component={MainPage } />
     
       </Switch>
+      <Footer/>
     </div>
   );
 }

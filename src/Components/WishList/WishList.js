@@ -8,7 +8,7 @@ export default function WishList() {
 
   const {wishListItems}=useContext(ProductContext)
   return (
-    <div >
+    <div style={{height:"85vh"}}>
 
       <div className={styles.wishlistHead}>
         Your Wishlist - {wishListItems.length} items
