@@ -15,8 +15,8 @@ export default function Navbar(){
     return(
         <div className={styles.nav}>
             <div className={styles.logo}>
-                <span className={styles.famusic}><i className="fas fa-music" > </i></span> 
-                MUSIC<strong>MART</strong>
+                <NavLink to="/" style={{textDecoration:"none",color:"black"}}><span className={styles.famusic}><i className="fas fa-music" > </i></span> 
+                MUSIC<strong>MART</strong></NavLink>
                 <div className={styles.menuicon} onClick={()=>{handleClick()}}>
            <i className={clicked?"fas fa-times":"fas fa-bars"}></i>
         </div>
