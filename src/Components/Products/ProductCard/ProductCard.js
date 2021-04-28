@@ -2,10 +2,12 @@ import styles from './ProductCard.module.css'
 import {useContext} from 'react'
 import {ProductContext} from '../../../store/ProductContext'
 import {NavLink} from 'react-router-dom'
+import {successToast} from '../../Toast/toast'
 
 export default function ProductCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}) {
 
   const {dispatch}=useContext(ProductContext);
+ 
     return (
       <div className={styles.App}>
       
@@ -39,14 +41,16 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
                   dispatch({
                       type: "REMOVE_FROM_WISHLIST",
                       payload: id,
-                    })
+                    },successToast("removed from wishlist"))
+                    
+                  
                   : 
                 dispatch({
                   type: "ADD_TO_WISHLIST",
                   payload: id,
-                });
-                console.log("onclick");
-            }}>
+                },successToast("added to wishlist"));
+                
+            } }>
 
             </i>
                 </span>
@@ -68,6 +72,7 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
                             onClick={()=>{
                                 
                                 dispatch({type:"ADD_TO_CART",payload:id})
+                                successToast("added to cart")
                             }}
                         >
                         Add to cart
@@ -82,8 +87,7 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
 
               
               </div>
-              {/* <button>{inStock?"Add To Cart":"Out of Stock"}</button>
-              <button>Add to Wishlist</button> */}
+              
             </div>
           </div>    
       </div>
@@ -91,18 +95,3 @@ export default function ProductCard({id,name,image,hasDiscount,price,category,di
 }
   
 
-// {inWishlist?<button 
-//   className={`${styles["button-solid"]} ${styles["button-solid-secondary"]}`}
-// >
-//   {/* <Link to="/wishlist">
-//       Go to Wishlist
-//   </Link> */}
-// </button>:<button 
-//   className={`${styles["button-outline"]} ${styles["button-secondary"]}`}
-//   // onClick={()=>{
-//   //     dispatch({type:"ADD_TO_WISHLIST",payload:id})
-//   //     infoToast(`${name} Added to wishlist`)
-//   // }}
-// >
-// Add to wishlist
-// </button>}

@@ -17,6 +17,7 @@ export default function Products() {
                             ,fastDelivery,inStock,inCart,inWishlist})=>(
                             
                                 <ProductCard
+                                key={id}
                                     id={id}
                                     name={name}
                                     image={image}

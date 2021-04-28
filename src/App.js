@@ -6,6 +6,7 @@ import WishList from './Components/WishList/WishList'
 import Cart from './Components/CartPage/CartPage'
 import Footer from './Components/Footer/Footer'
 import { Switch, Route} from "react-router-dom";
+import {ToastContainer} from 'react-toastify'
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
         <Route  path="/wishlist"  component={WishList } />
         <Route  path="/products"  component={Products } />
         <Route  path="/"  component={MainPage } />
-    
       </Switch>
+      <ToastContainer/>
       <Footer/>
     </div>
   );

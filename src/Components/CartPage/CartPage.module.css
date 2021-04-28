@@ -9,11 +9,12 @@ body {
 }
 
 .section {
-  height: 100vh;
+  /* height: 100vh; */
   position: relative;
   display: flex;
   top: 100px;
   margin: 40px 140px;
+  padding-bottom: 100px;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
@@ -28,6 +29,7 @@ body {
   background-color: #70bdff;
   padding: 50px 165px;
   color: #fff;
+  margin-bottom: 250px;
 }
 
 @media screen and (max-width: 950px) {

@@ -19,8 +19,9 @@ export default function CartPage() {
                         
                         cartItems.map(({id,name,image,price,category,rating,hasDiscount,discount
                             ,fastDelivery,inStock,inCart,inWishlist,quantity})=>(
-                            
+                             
                                 <CartCard
+                                key={id}
                                     id={id}
                                     name={name}
                                     image={image}

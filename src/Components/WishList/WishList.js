@@ -8,7 +8,7 @@ export default function WishList() {
 
   const {wishListItems}=useContext(ProductContext)
   return (
-    <div style={{height:"85vh"}}>
+    <div >
 
       <div className={styles.wishlistHead}>
         Your Wishlist - {wishListItems.length} items
@@ -20,6 +20,7 @@ export default function WishList() {
                             ,fastDelivery,inStock,inCart,inWishlist})=>(
                              
                                 <ProductCard
+                                key={id}
                                     id={id}
                                     name={name}
                                     image={image}
@@ -36,7 +37,7 @@ export default function WishList() {
                            
                         ))
                     }</ul>
-                    : <h1 style={{position:"relative",top:"140px",textAlign:"center"}}>Wishlist is empty</h1>
+                    : <h1 style={{height:"74vh",position:"relative",top:"140px",textAlign:"center"}}>Wishlist is empty</h1>
                   }
                
             
