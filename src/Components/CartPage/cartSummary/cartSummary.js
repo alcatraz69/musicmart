@@ -1,14 +1,17 @@
 import styles from './cartSummary.module.css'
-import {useContext} from 'react'
+import {useContext,useEffect} from 'react'
 import {ProductContext} from '../../../store/ProductContext'
 
 export default function CartSummary(){
-    const {cartItems} = useContext(ProductContext)
+    const {cartItems,dispatch} = useContext(ProductContext);
 
-    const totalPrice = cartItems.reduce(
+     const totalPrice = cartItems.reduce(
         (count, item) => count + parseInt(item.price) * item.quantity, 0
       );
 
+      useEffect(()=>{
+        dispatch({type:"CALC_TOTAL_COST",payload:totalPrice})
+    },[dispatch,totalPrice])
 
 
     return(

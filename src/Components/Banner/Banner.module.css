@@ -28,16 +28,19 @@
 
 @media screen and (max-width: 950px) {
   .carousel {
-    position: fixed;
+    position: relative;
     top: 40px;
+
+    margin-bottom: 120px;
   }
 
   .btn {
-    left: 32%;
+    left: 38%;
     top: 58%;
   }
 
-  .w-100 {
-    width: 255%;
+  .bannerImg img {
+    width: 120% !important;
+    height: 275px;
   }
 }

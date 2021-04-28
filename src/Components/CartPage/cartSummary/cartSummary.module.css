@@ -31,3 +31,9 @@
   background-color: #4789cf;
   transition: 0.3s ease-in;
 }
+
+@media screen and (max-width: 950px) {
+  .section {
+    display: none;
+  }
+}

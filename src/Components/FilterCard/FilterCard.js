@@ -4,7 +4,7 @@ import styles from './FilterCard.module.css'
 export default function FilterCard(){
   const {dispatch} = useContext(ProductContext)
     return(
-        <div className={styles.FilterCard} style={{ display: "flex", flexWrap: "wrap" ,flexDirection: "column"}}>
+        <div className={styles.FilterCard} >
             
           <legend>Sort by price</legend>
           <label>

@@ -11,35 +11,41 @@ export default function Banner(){
         
         <Carousel className={styles.carousel} fade={true} controls={false} pause={false} indicators={false}>
   <Carousel.Item interval={3000}>
-    <img
+    <span className={styles.bannerImg}><img
+    
       className="d-block w-100"
       src={img1}
       alt="First slide"
     />
+    </span>
     <Carousel.Caption>
       <h3>Get great deals</h3>
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item interval={3000}>
+    <span className={styles.bannerImg}>
     <img
+    
       className="d-block w-100"
       src={img2}
       alt="Second slide"
     />
-
+    </span>
     <Carousel.Caption>
       <h3>On best products</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item interval={3000}>
+    <span className={styles.bannerImg}>
     <img
+    
       className="d-block w-100"
       src={img3}
       alt="Third slide"
     />
-
+  </span>
     <Carousel.Caption>
       <h3>Across various categories</h3>
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>

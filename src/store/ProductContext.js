@@ -87,6 +87,11 @@ export const ProductsContextProvider=({children})=>{
                     products:state.products.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product),
                     wishListItems:state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product)
                 };
+              case "CALC_TOTAL_COST":
+                return{
+                  ...state,
+                  totalCost:action.payload
+                }
 
 
             default:

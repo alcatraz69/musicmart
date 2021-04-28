@@ -6,10 +6,14 @@ import {useContext} from 'react'
 import CartCard from './cartCard/cartCard'
 
 export default function CartPage() {
-  const {cartItems} = useContext(ProductContext)
+  const {cartItems,totalCost} = useContext(ProductContext)
   return (
     <>
     <div className={styles.section}>
+      <div className={styles.totalcost}>
+        <h5>Total cost : Rs. {totalCost}</h5>
+        <button className={styles.orderBtn}>Place Order</button>
+      </div>
 
     {cartItems.length>0? <ul>{
                         
@@ -35,7 +39,7 @@ export default function CartPage() {
                         ))
                         
                     }</ul>:
-                    <div style={{fontSize:"xxx-large",backgroundColor:"#70bdff", padding: "50px 165px",color: "#fff"}}>
+                    <div className={styles.emptyCart} >
                       Your cart is empty! 🥺 
                     </div>
 }

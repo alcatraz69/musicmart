@@ -18,3 +18,43 @@ body {
   align-items: flex-start;
   flex-direction: column;
 }
+
+.totalcost {
+  display: none;
+}
+
+.emptyCart {
+  font-size: xxx-large;
+  background-color: #70bdff;
+  padding: 50px 165px;
+  color: #fff;
+}
+
+@media screen and (max-width: 950px) {
+  .section {
+    top: 0;
+    margin: 0 23px;
+  }
+  .totalcost {
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+  }
+  .orderBtn {
+    background-color: #4789cf;
+    border: none;
+    padding: 6px 20px;
+    text-decoration: none;
+    width: 99%;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+  .emptyCart {
+    font-size: smaller;
+    background-color: #70bdff;
+    padding: 50px 135px;
+    color: #fff;
+  }
+}
