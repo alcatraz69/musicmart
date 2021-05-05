@@ -5,7 +5,7 @@ import {ProductContext} from '../../store/ProductContext'
 import {useContext} from 'react'
 import CartCard from './cartCard/cartCard'
 
-export default function CartPage() {
+export function CartPage() {
   const {cartItems,totalCost} = useContext(ProductContext)
   return (
     <>

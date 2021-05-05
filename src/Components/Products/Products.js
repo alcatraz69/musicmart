@@ -5,7 +5,7 @@ import {ProductContext} from '../../store/ProductContext';
 import ProductCard from './ProductCard/ProductCard'
 import FilterCard from '../FilterCard/FilterCard'
 
-export default function Products() {
+export function Products() {
   const {products}=useContext(ProductContext);
   
   return(

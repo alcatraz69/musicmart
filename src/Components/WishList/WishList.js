@@ -4,7 +4,7 @@ import {ProductContext} from '../../store/ProductContext'
 import styles from './WishList.module.css'
 import ProductCard from '../Products/ProductCard/ProductCard'
 
-export default function WishList() {
+export function WishList() {
 
   const {wishListItems}=useContext(ProductContext)
   return (

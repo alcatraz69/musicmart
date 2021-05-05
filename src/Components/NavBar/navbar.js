@@ -4,7 +4,7 @@ import {useState} from 'react'
 import {useContext} from 'react'
 import {ProductContext} from '../../store/ProductContext'
 
-export default function Navbar(){
+export function Navbar(){
     const {wishListItems,cartItems}=useContext(ProductContext)
 
     const [clicked,setClicked] = useState(false)
@@ -25,7 +25,7 @@ export default function Navbar(){
             <ul className={clicked?styles.listActive:styles.list}>
                 <li className={styles.listitem}><NavLink to="/" exact style={{textDecoration:"none"}} activeStyle={{
                                                  borderBottom:"2px solid black"
-                                                  }}>Home</NavLink></li>
+                                                  }} >Home</NavLink></li>
 
                 <li className={styles.listitem}><NavLink to="/products" style={{textDecoration:"none"}} activeStyle={{
                                                  borderBottom:"2px solid black"
