@@ -31,7 +31,7 @@
 }
 @media (max-width: 956px) {
   .cards {
-    width: 60%;
+    width: 64%;
   }
   .carditem:hover {
     cursor: pointer;

@@ -61,11 +61,11 @@ export default function FilterCard(){
             className={styles.slideBtn}
               type="range"
               min={0}
-              
-              max={1000}
-              // onChange={(event) =>
-              //   dispatch({ type: "SETPRICERANGE", payload: event.target.value })
-              // }
+              max={23000}
+              step={5000}
+              onChange={(event) =>
+                dispatch({ type: "SETPRICERANGE", payload: event.target.value })
+              }
             />
           </label>
          

@@ -20,7 +20,7 @@ export const ProductsContextProvider=({children})=>{
             case "LOAD_PRODUCT_LIST":    
                 return {
                     ...state,
-                    products:action.payload.map(item=>({...item,inCart:false,inWishlist:false,quantity:0}))
+                    products: action.payload.map(item=>({...item,inCart:false,inWishlist:false,quantity:0}))
                 }
             case "SORT_LOW_TO_HIGH":
                     return {
@@ -51,41 +51,41 @@ export const ProductsContextProvider=({children})=>{
             case "ADD_TO_WISHLIST":
                     return{
                         ...state,
-                        wishListItems:[...state.wishListItems,...state.products.filter(product=>product.id===action.payload).map(item=>({...item,inWishlist:true}))],
-                        products:state.products.map(product=>product.id===action.payload?{...product,inWishlist:true}:product)
+                        wishListItems: [...state.wishListItems,...state.products.filter(product=>product.id===action.payload).map(item=>({...item,inWishlist:true}))],
+                        products: state.products.map(product=>product.id===action.payload?{...product,inWishlist:true}:product)
                       };
             case "REMOVE_FROM_WISHLIST":
                     return{
                         ...state,
-                        wishListItems:state.wishListItems.filter(product=>product.id!==action.payload),
-                        products:state.products.map(product=>product.id===action.payload?{...product,inWishlist:false}:product)
+                        wishListItems: state.wishListItems.filter(product=>product.id!==action.payload),
+                        products: state.products.map(product=>product.id===action.payload?{...product,inWishlist:false}:product)
                      };
             case "INCREMENT_QUANTITY":
                       return{
                           ...state,
-                          cartItems:state.cartItems.map(product=>product.id===action.payload?{...product,quantity:product.quantity+1}:product)
+                          cartItems: state.cartItems.map(product=>product.id===action.payload?{...product,quantity:product.quantity+1}:product)
                       };
             case "DECREMENT_QUANTITY":
                       return{
                           ...state,
-                          cartItems:state.cartItems.map(product=>product.id===action.payload?{...product,quantity:product.quantity>1?product.quantity-1:product.quantity}:product)
+                          cartItems: state.cartItems.map(product=>product.id===action.payload?{...product,quantity:product.quantity>1?product.quantity-1:product.quantity}:product)
                       };
             
             case "ADD_TO_CART":
       
                    return{
                       ...state,
-                        cartItems:[...state.cartItems,...state.products.filter(product=>product.id===action.payload).map(item=>({...item,inCart:true,quantity:1}))],
-                        products:state.products.map(product=>product.id===action.payload?{...product,inCart:true}:product),
-                        wishListItems:state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:true}:product)
+                        cartItems: [...state.cartItems,...state.products.filter(product=>product.id===action.payload).map(item=>({...item,inCart:true,quantity:1}))],
+                        products: state.products.map(product=>product.id===action.payload?{...product,inCart:true}:product),
+                        wishListItems: state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:true}:product)
              };
 
              case "REMOVE_FROM_CART":
                 return{
                     ...state,
-                    cartItems:state.cartItems.filter(product=>product.id!==action.payload),
-                    products:state.products.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product),
-                    wishListItems:state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product)
+                    cartItems: state.cartItems.filter(product=>product.id!==action.payload),
+                    products: state.products.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product),
+                    wishListItems: state.wishListItems.map(product=>product.id===action.payload?{...product,inCart:false,quantity:0}:product)
                 };
               case "CALC_TOTAL_COST":
                 return{
@@ -115,10 +115,10 @@ export const ProductsContextProvider=({children})=>{
     })
 
 
-    // const getProductsUnderPrice = (products, priceRange) => {
-    //     if (priceRange) return products.filter((item) => item.price <= priceRange);
-    //     return products;
-    //   };
+    const getProductsUnderPrice = (products, priceRange) => {
+        if (priceRange) return products.filter((item) => parseInt(item.price) < priceRange);
+        return products;
+      };
     
     const getSortedData = (products, sortBy) => {
         if (products&&sortBy === "SORTLOWTOHIGH")
@@ -136,20 +136,21 @@ export const ProductsContextProvider=({children})=>{
 
    
 
-    //   console.log(state.priceRange)
+      console.log(state.priceRange)
 
-    //   const priceRangeData = getProductsUnderPrice(state.items, state.priceRange);
+    const sortedData = getSortedData(state.products, state.sortBy);
 
-      const sortedData = getSortedData(state.products, state.sortBy);
+      const priceRangeData = getProductsUnderPrice(sortedData, state.priceRange);
+
+      
 
       const filteredData = getFilteredData(
-        sortedData,
+        priceRangeData,
         state.onlyFastDelivery,
         state.includeOutOfStock
       );
 
-//       const getMin = () => getSortedData(state.items, "SORTLOWTOHIGH")[0].price;
-//       const getMax = () => getSortedData(state.items, "SORTHIGHTOLOW")[0].price;
+
 
  
 
@@ -166,8 +167,7 @@ export const ProductsContextProvider=({children})=>{
                 sortby:state.sortby,
                 totalCost:state.totalCost,
                 filterByCatagory:state.filterByCatagory
-                // getMin:getMin,
-                // getMax:getMax
+                
             }}
         >
             {children}
