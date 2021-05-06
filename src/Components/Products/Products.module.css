@@ -11,6 +11,7 @@
   margin: 0 0 100px 0;
   width: 70%;
   left: 28%;
+  min-height: 66vh;
 }
 
 @media screen and (max-width: 950px) {
