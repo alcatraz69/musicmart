@@ -1,18 +1,22 @@
-import {useContext} from 'react'
+import {useContext,useState} from 'react'
 import {ProductContext} from '../../store/ProductContext'
 import styles from './FilterCard.module.css'
 export default function FilterCard(){
   const {dispatch} = useContext(ProductContext)
+  const [openFilter, setFilter] = useState(false);
     return(
-        <div className={styles.FilterCard} >
-            
+        <div className={openFilter?styles.FilterCardActive:styles.FilterCard} >
+            <h5 className={styles.desktop_filter}>Filters <i className="fas fa-filter"></i></h5>
+            <h5 onClick={() => setFilter((openFilter) => !openFilter)} className={styles.mobile_filter}>
+              {openFilter? "Apply" : "Filters"} <i className="fas fa-filter"></i></h5>
+            <hr/>
           <legend>Sort by price</legend>
           <label>
             <input
             className={styles.radioBtn}
               type="radio"
               name="price"
-              onClick={() => dispatch({ type: "SORTLOWTOHIGH" })}
+              onClick={() => dispatch({ type: "SORT_LOW_TO_HIGH" })}
             />
           
             low to high
@@ -22,13 +26,13 @@ export default function FilterCard(){
             className={styles.radioBtn}
               type="radio"
               name="price"
-              onClick={() => dispatch({ type: "SORTHIGHTOLOW" })}
+              onClick={() => dispatch({ type: "SORT_HIGH_TO_LOW" })}
             />
           
             hight to low
           </label>
 
-          <hr></hr>
+          <hr/>
           
         
           <legend>Preferences</legend>
@@ -36,20 +40,20 @@ export default function FilterCard(){
             <input
             className={styles.radioBtn}
               type="checkbox"
-              onClick={() => dispatch({ type: "OUTOFSTOCK" })}
+              onClick={() => dispatch({ type: "OUT_OF_STOCK" })}
             />
-            inclue out of stock products
+            include out of stock products
           </label>
           <label>
             <input
             className={styles.radioBtn}
               type="checkbox"
-              onClick={() => dispatch({ type: "WITHFASTDELIVERY" })}
+              onClick={() => dispatch({ type: "WITH_FAST_DELIVERY" })}
             />
             fast delivery only
           </label>
 
-          <hr></hr>
+          <hr/>
           <legend>Price</legend>
           <label>
             slide 

@@ -22,22 +22,22 @@ export const ProductsContextProvider=({children})=>{
                     ...state,
                     products:action.payload.map(item=>({...item,inCart:false,inWishlist:false,quantity:0}))
                 }
-            case "SORTLOWTOHIGH":
+            case "SORT_LOW_TO_HIGH":
                     return {
                       ...state,
                       sortBy: "SORTLOWTOHIGH"
                     };
-            case "SORTHIGHTOLOW":
+            case "SORT_HIGH_TO_LOW":
                     return {
                       ...state,
                       sortBy: "SORTHIGHTOLOW"
                     };
-            case "OUTOFSTOCK":
+            case "OUT_OF_STOCK":
                     return {
                       ...state,
                       includeOutOfStock: !state.includeOutOfStock
                     };
-            case "WITHFASTDELIVERY":
+            case "WITH_FAST_DELIVERY":
                     return {
                         ...state,
                         onlyFastDelivery: !state.onlyFastDelivery

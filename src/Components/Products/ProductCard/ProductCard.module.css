@@ -26,12 +26,15 @@
   display: flex;
   padding: 1rem;
   margin-bottom: 2rem;
-  width: 60%;
+  width: 65%;
   margin: 26px 22px;
 }
-@media (min-width: 40rem) {
+@media (max-width: 956px) {
   .cards {
-    width: 50%;
+    width: 60%;
+  }
+  .carditem:hover {
+    cursor: pointer;
   }
 }
 @media (min-width: 56rem) {

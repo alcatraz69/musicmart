@@ -8,7 +8,7 @@ export function WishList() {
 
   const {wishListItems}=useContext(ProductContext)
   return (
-    <div >
+    <div style={{overflowX:"hidden"}}>
 
       <div className={styles.wishlistHead}>
         Your Wishlist - {wishListItems.length} items

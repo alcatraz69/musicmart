@@ -39,7 +39,7 @@ export default function CartCard({id,name,image,hasDiscount,price,category,disco
                <button href="#" className={styles.cardBtn1} onClick={() => dispatch({
                   type: "ADD_TO_WISHLIST",
                   payload: id,
-                })}>{!inWishlist? "Move to wishlist" : "In Cart"}</button>
+                })}>{!inWishlist? "Move to wishlist" : "In Wishlist"}</button>
              </div>
            </div>
         </div>
