@@ -16,6 +16,7 @@
   background-repeat: no-repeat;
   border-radius: 6px 6px 0px 0px;
   opacity: 0.91;
+  transition: all ease 0.3s;
 }
 
 .cards .carditem:hover .cardimage {
@@ -52,14 +53,10 @@
   border-radius: 6px;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  transition: transform 0.5s;
-  -webkit-transition: transform 0.5s;
 }
 
 .carditem:hover {
   cursor: pointer;
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
 }
 
 .cardinfo {
@@ -153,4 +150,9 @@
 
 .star {
   margin-right: 5px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
 }

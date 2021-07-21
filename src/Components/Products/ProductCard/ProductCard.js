@@ -1,97 +1,123 @@
-import styles from './ProductCard.module.css'
-import {useContext} from 'react'
-import {ProductContext} from '../../../store/ProductContext'
-import {NavLink} from 'react-router-dom'
-import {successToast} from '../../Toast/toast'
+import styles from "./ProductCard.module.css";
+import { useContext } from "react";
+import { ProductContext } from "../../../store/ProductContext";
+import { NavLink } from "react-router-dom";
+import { successToast } from "../../Toast/toast";
+import { FaPaperPlane, FaStar, FaRegHeart, FaHeart } from "react-icons/fa";
+import { searchCart, searchWishlist } from "../../../Utils/Utils";
+import {
+  addToWishlist,
+  removeFromWishlist,
+  addToCart,
+} from "../../../api/serverCalls";
 
-export default function ProductCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}) {
+export default function ProductCard({
+  id,
+  name,
+  image,
+  price,
+  category,
+  rating,
+  inStock,
+  fastDelivery,
+}) {
+  const { dispatch, wishListItems, cartItems, products } =
+    useContext(ProductContext);
+  const product = products.find((one) => one._id === id);
 
-  const {dispatch}=useContext(ProductContext);
- 
-    return (
-      <div className={styles.App}>
-      
-          <div className={styles.cards}>
-          
-          <div className={styles.carditem}>
-          
-              <div className={styles.cardimageSec}>
-              <img className={styles.cardimage} src={image} alt=""/>
-              </div>
-              {fastDelivery && (
-          <span className={styles.badge}><i className="fas fa-paper-plane"></i></span>
-        )}
-              <div className={styles.cardinfo}>
-                <h2 className={styles.cardtitle}> {name}</h2>
-                <p>{category}</p>
-                <div className={styles.cardintro}>
-                  <div style={{marginRight:"60px"}}>
-                    Rs. {price}
-                  </div>
-                
-                  <div className={styles.rating}>
-                    <span className={styles.star}><i className="fas fa-star"></i></span>
-                     {rating}
-                  </div>
+  function handleWishlist() {
+    if (searchWishlist(wishListItems, id) === false) {
+      addToWishlist(product);
+      dispatch(
+        {
+          type: "ADD_TO_WISHLIST",
+          payload: product,
+        },
+        successToast("Added to wishlist")
+      );
+    } else {
+      removeFromWishlist(product);
+      dispatch(
+        {
+          type: "REMOVE_FROM_WISHLIST",
+          payload: product,
+        },
+        successToast("Removed from wishlist")
+      );
+    }
+  }
+  async function handleCart() {
+    const response = await addToCart(product);
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: response.data.cart,
+    });
+    successToast("added to cart");
+  }
+  return (
+    <div className={styles.App}>
+      <div className={styles.cards}>
+        <div className={styles.carditem}>
+          <div className={styles.cardimageSec}>
+            <img className={styles.cardimage} src={image} alt="" />
+          </div>
+          {fastDelivery && (
+            <span className={styles.badge}>
+              <FaPaperPlane />
+            </span>
+          )}
+          <div className={styles.cardinfo}>
+            <h2 className={styles.cardtitle}> {name}</h2>
+            <p>{category}</p>
+            <div className={styles.cardintro}>
+              <div style={{ marginRight: "60px" }}>Rs. {price}</div>
+
+              <div className={styles.rating}>
+                <div className={styles.star}>
+                  <FaStar />
                 </div>
-                <span className={styles.wishlistIcon}>
-                <i className={!inWishlist?"far fa-heart":"fas fa-heart"} 
-                 onClick={() => {inWishlist?
-                  
-                  dispatch({
-                      type: "REMOVE_FROM_WISHLIST",
-                      payload: id,
-                    },successToast("removed from wishlist"))
-                    
-                  
-                  : 
-                dispatch({
-                  type: "ADD_TO_WISHLIST",
-                  payload: id,
-                },successToast("added to wishlist"));
-                
-            } }>
-
-            </i>
-                </span>
-                
-
-                
+                <div style={{ marginTop: "3px" }}>{rating}</div>
               </div>
-              <div className={styles.actionBtns}>
-              {inStock?inCart?
-                        <button 
-                            className={`${styles["button-secondary"]} `}
-                        >
-                            <NavLink to="/cart" style={{textDecoration:"none",color:"white"}}>
-                                Go to cart
-                            </NavLink>
-                        </button>:
-                        <button 
-                            className={`${styles["button-primary"]} `}
-                            onClick={()=>{
-                                
-                                dispatch({type:"ADD_TO_CART",payload:id})
-                                successToast("added to cart")
-                            }}
-                        >
-                        Add to cart
-                        </button>:
-                        <div className={`${styles["button-solid"]} ${styles["badge-not-instock"]}`}>
-                            Not in stock
-                        </div>
-                        }
-
-                       
-
-
-              
-              </div>
-              
             </div>
-          </div>    
+            <span className={styles.wishlistIcon}>
+              <span onClick={handleWishlist}>
+                {searchWishlist(wishListItems, id) === false ? (
+                  <FaRegHeart />
+                ) : (
+                  <FaHeart />
+                )}
+              </span>
+            </span>
+          </div>
+          <div className={styles.actionBtns}>
+            {inStock ? (
+              searchCart(cartItems, id) === true ? (
+                <button className={`${styles["button-secondary"]} `}>
+                  <NavLink
+                    to="/cart"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    Go to cart
+                  </NavLink>
+                </button>
+              ) : (
+                <button
+                  className={`${styles["button-primary"]} `}
+                  onClick={handleCart}
+                >
+                  Add to cart
+                </button>
+              )
+            ) : (
+              <div
+                className={`${styles["button-solid"]} ${styles["badge-not-instock"]}`}
+              >
+                Not in stock
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-    )
+    </div>
+  );
 }
-  
-

@@ -10,8 +10,9 @@
 }
 
 .famusic {
-  color: #007bff;
-  margin-right: 3px;
+  color: #007bff !important;
+  margin-right: 2px;
+  margin-bottom: 3px;
 }
 
 .listitem:hover {
@@ -26,7 +27,7 @@
   float: left;
   width: 40%;
   height: 100%;
-  padding-left: 5%;
+  padding-left: 2%;
 }
 .nav {
   position: fixed;
@@ -38,6 +39,7 @@
   background-color: #fff;
   z-index: 2;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  font-family: "Montserrat", sans-serif;
 }
 
 .list {

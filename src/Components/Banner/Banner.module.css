@@ -18,6 +18,7 @@
   color: black;
   border: 2px solid black;
   margin-bottom: 60px;
+  text-align: center;
 }
 .btn:hover {
   background-color: #007bff;
