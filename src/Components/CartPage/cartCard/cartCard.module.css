@@ -95,17 +95,9 @@
   }
 
   .cardContent {
-    display: flex;
-
-    padding: 24px;
-    margin-top: 0px;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: relative;
-    left: -35px;
-    top: -12px;
-    font-size: 0.6rem;
-    width: 80%;
+    left: -10px;
+    top: -14px;
+    padding: 0;
   }
 
   .cardHero {
@@ -138,6 +130,7 @@
     padding: 0px 10px;
     text-decoration: none;
     background-color: transparent;
+    font-size: 12px;
   }
   .cardBtn1:hover {
     border: 2px solid #1696ff;
