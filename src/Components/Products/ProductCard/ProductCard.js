@@ -1,10 +1,12 @@
 import styles from "./ProductCard.module.css";
 import { useContext } from "react";
 import { ProductContext } from "../../../store/ProductContext";
+import { useAuth } from "../../../store/AuthContext";
 import { NavLink } from "react-router-dom";
 import { successToast } from "../../Toast/toast";
 import { FaPaperPlane, FaStar, FaRegHeart, FaHeart } from "react-icons/fa";
 import { searchCart, searchWishlist } from "../../../Utils/Utils";
+import { useHistory } from "react-router-dom";
 import {
   addToWishlist,
   removeFromWishlist,
@@ -23,36 +25,48 @@ export default function ProductCard({
 }) {
   const { dispatch, wishListItems, cartItems, products } =
     useContext(ProductContext);
+  const {
+    authState: { isUserLoggedIn },
+  } = useAuth();
+  const history = useHistory();
   const product = products.find((one) => one._id === id);
 
   function handleWishlist() {
-    if (searchWishlist(wishListItems, id) === false) {
-      addToWishlist(product);
-      dispatch(
-        {
-          type: "ADD_TO_WISHLIST",
-          payload: product,
-        },
-        successToast("Added to wishlist")
-      );
+    if (isUserLoggedIn) {
+      if (searchWishlist(wishListItems, id) === false) {
+        addToWishlist(product);
+        dispatch(
+          {
+            type: "ADD_TO_WISHLIST",
+            payload: product,
+          },
+          successToast("Added to wishlist")
+        );
+      } else {
+        removeFromWishlist(product);
+        dispatch(
+          {
+            type: "REMOVE_FROM_WISHLIST",
+            payload: product,
+          },
+          successToast("Removed from wishlist")
+        );
+      }
     } else {
-      removeFromWishlist(product);
-      dispatch(
-        {
-          type: "REMOVE_FROM_WISHLIST",
-          payload: product,
-        },
-        successToast("Removed from wishlist")
-      );
+      history.push("/login");
     }
   }
   async function handleCart() {
-    const response = await addToCart(product);
-    dispatch({
-      type: "ADD_TO_CART",
-      payload: response.data.cart,
-    });
-    successToast("added to cart");
+    if (isUserLoggedIn) {
+      const response = await addToCart(product);
+      dispatch({
+        type: "ADD_TO_CART",
+        payload: response.data.cart,
+      });
+      successToast("added to cart");
+    } else {
+      history.push("/login");
+    }
   }
   return (
     <div className={styles.App}>
