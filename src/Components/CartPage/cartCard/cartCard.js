@@ -19,8 +19,10 @@ export default function CartCard({ cartId, product, quantity }) {
       </div>
       <div className={styles.cardContent}>
         <div className={styles.carInfo}>
-          <h5>Rs. {product?.price}</h5>
-          <p style={{ width: "150px" }}>{product?.name}</p>
+          <p style={{ width: "150px", fontSize: "18px", margin: "0" }}>
+            Rs. {product?.price}
+          </p>
+          <p style={{ width: "150px", fontSize: "14px" }}>{product?.name}</p>
         </div>
 
         <div className={styles.quantity}>
