@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
 * {
   box-sizing: border-box;
 }
@@ -7,16 +6,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* .container {
-  display: flex;
-  -webkit-display: box;
-  -moz-display: box;
-  -ms-display: flexbox;
-  -webkit-display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-} */
 .cards .cardimage {
   /* background-image: url("https://source.unsplash.com/featured/?hiking"); */
   height: 200px;
@@ -27,6 +16,7 @@
   background-repeat: no-repeat;
   border-radius: 6px 6px 0px 0px;
   opacity: 0.91;
+  transition: all ease 0.3s;
 }
 
 .cards .carditem:hover .cardimage {
@@ -37,12 +27,15 @@
   display: flex;
   padding: 1rem;
   margin-bottom: 2rem;
-  width: 60%;
+  width: 65%;
   margin: 26px 22px;
 }
-@media (min-width: 40rem) {
+@media (max-width: 956px) {
   .cards {
-    width: 50%;
+    width: 64%;
+  }
+  .carditem:hover {
+    cursor: pointer;
   }
 }
 @media (min-width: 56rem) {
@@ -60,14 +53,10 @@
   border-radius: 6px;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  transition: transform 0.5s;
-  -webkit-transition: transform 0.5s;
 }
 
 .carditem:hover {
   cursor: pointer;
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
 }
 
 .cardinfo {
@@ -106,15 +95,31 @@
   align-items: center;
 }
 
-.button-outline {
-  outline: none;
+.button-primary {
+  color: rgb(255, 255, 255);
   width: 90%;
+  outline: none;
   margin: 1rem;
+  border: none;
   padding: 0.5rem;
   font-size: 1rem;
+  background-color: rgb(50, 133, 201);
+  border-radius: 4px;
 }
 
-.button-solid {
+.button-secondary {
+  color: rgb(255, 255, 255);
+  width: 90%;
+  outline: none;
+  margin: 1rem;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgb(10, 38, 61);
+  border-radius: 4px;
+}
+
+.badge-not-instock {
   color: black;
   width: 90%;
   outline: none;
@@ -122,6 +127,8 @@
   border: 0px;
   padding: 0.5rem;
   font-size: 1rem;
+  background-color: rgb(206, 206, 206);
+  text-align: center;
 }
 
 .badge {
@@ -129,9 +136,6 @@
   top: 5px;
   left: 4px;
   z-index: 1;
-  /* background: rgb(94, 178, 235); */
-  /* font-family: "Montserrat"; */
-  /* font-size: smaller; */
   padding: 1px 4px;
   color: rgb(51, 116, 255);
 }
@@ -141,8 +145,14 @@
   top: 9px;
   right: 17px;
   font-size: 18px;
+  color: rgb(240, 72, 72);
 }
 
-.wishlistIcon:hover {
-  background-color: #919191;
+.star {
+  margin-right: 5px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
 }

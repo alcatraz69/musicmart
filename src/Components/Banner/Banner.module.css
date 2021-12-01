@@ -1,5 +1,5 @@
 .carousel {
-  position: fixed;
+  position: relative;
   top: 128px;
   margin-bottom: 200px;
 }
@@ -9,14 +9,16 @@
   position: relative;
   left: 45%;
   top: 55%;
-  padding: 8px 24px;
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
   display: block;
   background: transparent;
   /* box-shadow: 3px 3px 3px -2px; */
+  color: black;
   border: 2px solid black;
   margin-bottom: 60px;
+  text-align: center;
 }
 .btn:hover {
   background-color: #007bff;
@@ -27,16 +29,19 @@
 
 @media screen and (max-width: 950px) {
   .carousel {
-    position: fixed;
+    position: relative;
     top: 40px;
+
+    margin-bottom: 120px;
   }
 
   .btn {
-    left: 32%;
+    left: 38%;
     top: 58%;
   }
 
-  .w-100 {
-    width: 255%;
+  .bannerImg img {
+    width: 120% !important;
+    height: 275px;
   }
 }

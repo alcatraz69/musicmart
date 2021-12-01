@@ -1,0 +1,26 @@
+.account {
+  min-height: 80vh;
+  text-align: center;
+  margin-top: 90px;
+}
+
+.usericon {
+  width: 15rem;
+  border-radius: 50%;
+}
+
+.account_name {
+  font-size: 20px;
+}
+
+.logout_btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  border-radius: 0.2vw;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  color: black;
+  background-color: #e6e6e6;
+}

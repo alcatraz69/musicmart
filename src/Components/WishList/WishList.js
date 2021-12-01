@@ -1,42 +1,55 @@
 import React from "react";
-import {useContext} from 'react'
-import {ProductContext} from '../../store/ProductContext'
-import wishlistCard from './wishlistCard/wishlistCard'
-import styles from './WishList.module.css'
+import { useContext } from "react";
+import { ProductContext } from "../../store/ProductContext";
+import styles from "./WishList.module.css";
+import ProductCard from "../Products/ProductCard/ProductCard";
 
-export default function WishList() {
-
-  const {wishListItems}=useContext(ProductContext)
+export function WishList() {
+  const { wishListItems } = useContext(ProductContext);
   return (
-    <div className={styles.products}>
-                    {wishListItems.length>0?
-
-                        <ul>{
-                          wishListItems.map(({id,name,image,price,category,rating,hasDiscount,discount
-                            ,fastDelivery,inStock,inCart,inWishlist})=>(
-                             <li key={id}>
-                                <wishlistCard
-                                    id={id}
-                                    name={name}
-                                    image={image}
-                                    price= {price}
-                                    category={category}
-                                    rating={rating}
-                                    hasDiscount={hasDiscount}
-                                    discount={discount}
-                                    fastDelivery={fastDelivery}
-                                    inStock={inStock}
-                                    inCart={inCart}
-                                    inWishlist={inWishlist}
-                                />
-                           </li>
-                        ))
-                    }</ul>
-                    : <h1 style={{position:"absolute",top:"100px",textAlign:"center"}}>Wishlist empty</h1>
-                  }
-               
-            
-
+    <div style={{ overflowX: "hidden" }}>
+      <div className={styles.wishlistHead}>
+        Your Wishlist - {wishListItems.length} items
+      </div>
+      {wishListItems.length > 0 ? (
+        <ul className={styles.products}>
+          {wishListItems.map(
+            ({
+              _id,
+              name,
+              image,
+              price,
+              category,
+              rating,
+              fastDelivery,
+              inStock,
+            }) => (
+              <ProductCard
+                key={_id}
+                id={_id}
+                name={name}
+                image={image}
+                price={price}
+                category={category}
+                rating={rating}
+                fastDelivery={fastDelivery}
+                inStock={inStock}
+              />
+            )
+          )}
+        </ul>
+      ) : (
+        <h1
+          style={{
+            height: "74vh",
+            position: "relative",
+            top: "140px",
+            textAlign: "center",
+          }}
+        >
+          Wishlist is empty
+        </h1>
+      )}
     </div>
-  )
+  );
 }

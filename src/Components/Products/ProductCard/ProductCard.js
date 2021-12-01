@@ -1,86 +1,137 @@
-import styles from './ProductCard.module.css'
+import styles from "./ProductCard.module.css";
+import { useContext } from "react";
+import { ProductContext } from "../../../store/ProductContext";
+import { useAuth } from "../../../store/AuthContext";
+import { NavLink } from "react-router-dom";
+import { successToast } from "../../Toast/toast";
+import { FaPaperPlane, FaStar, FaRegHeart, FaHeart } from "react-icons/fa";
+import { searchCart, searchWishlist } from "../../../Utils/Utils";
+import { useHistory } from "react-router-dom";
+import {
+  addToWishlist,
+  removeFromWishlist,
+  addToCart,
+} from "../../../api/serverCalls";
 
-export default function ProductCard({id,name,image,hasDiscount,price,category,discount,rating,inCart,inWishlist,inStock,fastDelivery}) {
-    return (
-      <div className={styles.App}>
-      
-          <div className={styles.cards}>
-          
-          <div className={styles.carditem}>
-          
-              <div className={styles.cardimageSec}>
-              <img className={styles.cardimage} src={image} alt=""/>
-              </div>
-              {fastDelivery && (
-          <span className={styles.badge}><i className="fas fa-paper-plane"></i></span>
-        )}
-              <div className={styles.cardinfo}>
-                <h2 className={styles.cardtitle}> {name}</h2>
-                <p>{category}</p>
-                <div className={styles.cardintro}>
-                  <div style={{marginRight:"60px"}}>
-                    Rs. {price}
-                  </div>
-                
-                  <div className={styles.rating}>
-                    <i className="fas fa-star"></i>
-                     {rating}
-                  </div>
+export default function ProductCard({
+  id,
+  name,
+  image,
+  price,
+  category,
+  rating,
+  inStock,
+  fastDelivery,
+}) {
+  const { dispatch, wishListItems, cartItems, products } =
+    useContext(ProductContext);
+  const {
+    authState: { isUserLoggedIn },
+  } = useAuth();
+  const history = useHistory();
+  const product = products.find((one) => one._id === id);
+
+  function handleWishlist() {
+    if (isUserLoggedIn) {
+      if (searchWishlist(wishListItems, id) === false) {
+        addToWishlist(product);
+        dispatch(
+          {
+            type: "ADD_TO_WISHLIST",
+            payload: product,
+          },
+          successToast("Added to wishlist")
+        );
+      } else {
+        removeFromWishlist(product);
+        dispatch(
+          {
+            type: "REMOVE_FROM_WISHLIST",
+            payload: product,
+          },
+          successToast("Removed from wishlist")
+        );
+      }
+    } else {
+      history.push("/login");
+    }
+  }
+  async function handleCart() {
+    if (isUserLoggedIn) {
+      const response = await addToCart(product);
+      dispatch({
+        type: "ADD_TO_CART",
+        payload: response.data.cart,
+      });
+      successToast("added to cart");
+    } else {
+      history.push("/login");
+    }
+  }
+  return (
+    <div className={styles.App}>
+      <div className={styles.cards}>
+        <div className={styles.carditem}>
+          <div className={styles.cardimageSec}>
+            <img className={styles.cardimage} src={image} alt="" />
+          </div>
+          {fastDelivery && (
+            <span className={styles.badge}>
+              <FaPaperPlane />
+            </span>
+          )}
+          <div className={styles.cardinfo}>
+            <h2 className={styles.cardtitle}> {name}</h2>
+            <p>{category}</p>
+            <div className={styles.cardintro}>
+              <div style={{ marginRight: "60px" }}>Rs. {price}</div>
+
+              <div className={styles.rating}>
+                <div className={styles.star}>
+                  <FaStar />
                 </div>
-                {inWishlist? <span className={styles.wishlistIcon}><i className="fas fa-heart"></i></span> :
-                 <span className={styles.wishlistIcon}><i className="far fa-heart"></i></span>}
-
-                
+                <div style={{ marginTop: "3px" }}>{rating}</div>
               </div>
-              <div className={styles.actionBtns}>
-              {inStock?inCart?
-                        <button 
-                            className={`${styles["button-solid"]} ${styles["button-solid-secondary"]}`}
-                        >
-                            {/* <Link to="/cart">
-                                Go to cart
-                            </Link> */}
-                        </button>:
-                        <button 
-                            className={`${styles["button-solid"]} ${styles["button-primary"]}`}
-                            // onClick={()=>{
-                            //     successToast(`${name} Added to cart`)
-                            //     dispatch({type:"ADD_TO_CART",payload:id})
-                            // }}
-                        >
-                        Add to cart
-                        </button>:
-                        <div className={`${styles["badge-solid"]} ${styles["badge-not-instock"]}`}>
-                            Not in stock
-                        </div>
-                        }
-
-                       
-
-
-              
-              </div>
-              {/* <button>{inStock?"Add To Cart":"Out of Stock"}</button>
-              <button>Add to Wishlist</button> */}
             </div>
-          </div>    
+            <span className={styles.wishlistIcon}>
+              <span onClick={handleWishlist}>
+                {searchWishlist(wishListItems, id) === false ? (
+                  <FaRegHeart />
+                ) : (
+                  <FaHeart />
+                )}
+              </span>
+            </span>
+          </div>
+          <div className={styles.actionBtns}>
+            {inStock ? (
+              searchCart(cartItems, id) === true ? (
+                <button className={`${styles["button-secondary"]} `}>
+                  <NavLink
+                    to="/cart"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    Go to cart
+                  </NavLink>
+                </button>
+              ) : (
+                <button
+                  className={`${styles["button-primary"]} `}
+                  onClick={handleCart}
+                >
+                  Add to cart
+                </button>
+              )
+            ) : (
+              <div
+                className={`${styles["button-solid"]} ${styles["badge-not-instock"]}`}
+              >
+                Not in stock
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-    )
+    </div>
+  );
 }
-  
-
-// {inWishlist?<button 
-//   className={`${styles["button-solid"]} ${styles["button-solid-secondary"]}`}
-// >
-//   {/* <Link to="/wishlist">
-//       Go to Wishlist
-//   </Link> */}
-// </button>:<button 
-//   className={`${styles["button-outline"]} ${styles["button-secondary"]}`}
-//   // onClick={()=>{
-//   //     dispatch({type:"ADD_TO_WISHLIST",payload:id})
-//   //     infoToast(`${name} Added to wishlist`)
-//   // }}
-// >
-// Add to wishlist
-// </button>}

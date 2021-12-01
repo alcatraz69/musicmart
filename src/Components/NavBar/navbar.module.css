@@ -6,16 +6,19 @@
   /* background-color: rgb(230, 230, 230); */
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .famusic {
-  color: #007bff;
-  margin-right: 3px;
+  color: #007bff !important;
+  margin-right: 2px;
+  margin-bottom: 3px;
 }
 
 .listitem:hover {
   background-color: #d4d5ff;
   transition: all 0.5s ease;
+  text-decoration: none;
 }
 
 .logo {
@@ -24,7 +27,7 @@
   float: left;
   width: 40%;
   height: 100%;
-  padding-left: 5%;
+  padding-left: 2%;
 }
 .nav {
   position: fixed;
@@ -36,6 +39,7 @@
   background-color: #fff;
   z-index: 2;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  font-family: "Montserrat", sans-serif;
 }
 
 .list {
@@ -44,7 +48,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 50%;
+  width: 30%;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -53,6 +57,24 @@
 .menuicon {
   color: rgb(0, 0, 0);
   display: none;
+}
+
+.title {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  background-color: rgb(243, 61, 61);
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  top: -12px;
+  right: -12px;
+  text-align: center;
 }
 
 @media screen and (max-width: 950px) {

@@ -2,9 +2,68 @@
   position: fixed;
   left: 0;
   top: 142px;
-  width: 25%;
+  width: 24%;
   background-color: rgb(207 223 255);
-  /* background-color: rgb(255 211 207); */
   padding: 20px;
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.radioBtn {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.15rem;
+  position: relative;
+  top: 0.15rem;
+}
+
+.slideBtn {
+  margin-left: 4px;
+}
+
+.desktop_filter {
+  display: block;
+}
+
+.mobile_filter {
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+  .FilterCard {
+    display: block;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    left: 0;
+    top: 91%;
+    margin: 0;
+    transition: all 0.5s ease;
+  }
+  .FilterCardActive {
+    display: block;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    left: 0;
+    top: 170px;
+    margin: 0;
+    background-color: rgb(207 223 255);
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    height: -webkit-fill-available;
+  }
+  .mobile_filter {
+    display: block;
+  }
+
+  .desktop_filter {
+    display: none;
+  }
 }
